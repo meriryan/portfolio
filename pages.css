@@ -1,0 +1,583 @@
+/* ==========================================================================
+   Inner Pages Styles - About, Contact, Case Studies
+   ========================================================================== */
+
+/* ==========================================================================
+   Page Hero
+   ========================================================================== */
+
+.page-hero {
+    padding: calc(var(--space-5xl) + 73px) 0 var(--space-4xl);
+    text-align: center;
+    background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-off-white) 100%);
+}
+
+.page-title {
+    font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
+    margin-bottom: var(--space-lg);
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-subtitle {
+    font-size: var(--text-xl);
+    color: var(--color-text-muted);
+    max-width: 700px;
+    margin: 0 auto;
+    animation: fadeInUp 0.8s 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+/* ==========================================================================
+   About Page
+   ========================================================================== */
+
+.about-content {
+    padding: var(--space-5xl) 0;
+}
+
+.about-section {
+    margin-bottom: var(--space-4xl);
+}
+
+.about-section:last-child {
+    margin-bottom: 0;
+}
+
+.section-heading {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-xl);
+    color: var(--color-text);
+}
+
+.about-text {
+    font-size: var(--text-lg);
+    line-height: 1.8;
+    color: var(--color-text);
+}
+
+.lead-text {
+    font-size: var(--text-2xl);
+    line-height: 1.6;
+    color: var(--color-text);
+    margin-bottom: var(--space-2xl);
+}
+
+.about-text strong {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.about-text em {
+    color: var(--color-primary);
+    font-style: italic;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-2xl);
+    margin-top: var(--space-xl);
+}
+
+.skill-category {
+    background-color: var(--color-gray-50);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.skill-category:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-base);
+}
+
+.skill-category-title {
+    font-size: var(--text-xl);
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+    font-family: var(--font-body);
+    font-weight: 600;
+}
+
+.skill-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.skill-list li {
+    color: var(--color-text-muted);
+    position: relative;
+    padding-left: var(--space-md);
+}
+
+.skill-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* About Highlight Section */
+.about-highlight {
+    background: linear-gradient(135deg, var(--color-cream), var(--color-gray-50));
+    padding: var(--space-3xl);
+    border-radius: var(--radius-2xl);
+    border: 2px solid var(--color-gray-200);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-highlight::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+    opacity: 0.05;
+}
+
+.highlight-icon {
+    font-size: var(--text-5xl);
+    margin-bottom: var(--space-lg);
+}
+
+.about-cta {
+    display: flex;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: var(--space-4xl);
+}
+
+/* ==========================================================================
+   Contact Page
+   ========================================================================== */
+
+.contact-content {
+    padding: var(--space-5xl) 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--space-4xl);
+}
+
+/* Contact Form */
+.contact-form-wrapper {
+    background-color: var(--color-surface);
+    padding: var(--space-3xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-base);
+}
+
+.form-group {
+    margin-bottom: var(--space-xl);
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: var(--space-md);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--color-text);
+    background-color: var(--color-gray-50);
+    border: 2px solid var(--color-gray-200);
+    border-radius: var(--radius-base);
+    transition: all var(--transition-base);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background-color: var(--color-surface);
+    box-shadow: 0 0 0 3px rgba(255, 120, 67, 0.1);
+}
+
+.form-input.error,
+.form-textarea.error {
+    border-color: #EF4444;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.error-message {
+    color: #EF4444;
+    font-size: var(--text-sm);
+    margin-top: var(--space-xs);
+}
+
+.success-message {
+    background-color: #10B981;
+    color: white;
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-base);
+    margin-bottom: var(--space-lg);
+    animation: slideDown 0.3s ease-out;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+}
+
+.contact-info-card {
+    background-color: var(--color-gray-50);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    transition: transform var(--transition-base);
+}
+
+.contact-info-card:hover {
+    transform: translateY(-4px);
+}
+
+.contact-info-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-burgundy));
+    border-radius: var(--radius-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: var(--space-md);
+}
+
+.contact-info-title {
+    font-size: var(--text-lg);
+    font-family: var(--font-body);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+}
+
+.contact-info-link {
+    color: var(--color-primary);
+    font-weight: 500;
+    transition: color var(--transition-base);
+}
+
+.contact-info-link:hover {
+    color: var(--color-burgundy);
+}
+
+.contact-info-text {
+    background-color: var(--color-surface);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-gray-200);
+}
+
+.contact-info-text p {
+    margin-bottom: var(--space-md);
+    line-height: 1.6;
+}
+
+.contact-info-text p:last-child {
+    margin-bottom: 0;
+}
+
+.contact-info-text strong {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Work Landing Page
+   ========================================================================== */
+
+.work-intro {
+    padding: calc(var(--space-4xl) + 73px) 0 var(--space-3xl);
+    text-align: center;
+    background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-off-white) 100%);
+}
+
+.work-intro-text {
+    font-size: var(--text-xl);
+    color: var(--color-text-muted);
+    max-width: 800px;
+    margin: 0 auto var(--space-2xl);
+    line-height: 1.7;
+}
+
+/* ==========================================================================
+   Case Study Page
+   ========================================================================== */
+
+.case-study-page {
+    /* Add class to body for back-to-top button */
+}
+
+.case-study-hero {
+    padding: calc(var(--space-4xl) + 73px) 0 var(--space-5xl);
+    background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-off-white) 100%);
+}
+
+.case-study-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+    font-size: var(--text-sm);
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.meta-label {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+    font-size: var(--text-xs);
+}
+
+.meta-value {
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.case-study-title {
+    font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
+    line-height: 1.1;
+    margin-bottom: var(--space-lg);
+}
+
+.case-study-subtitle {
+    font-size: var(--text-2xl);
+    color: var(--color-text-muted);
+    font-weight: 400;
+    margin-bottom: var(--space-2xl);
+}
+
+.case-study-content {
+    padding: var(--space-5xl) 0;
+}
+
+.case-study-section {
+    margin-bottom: var(--space-5xl);
+}
+
+.case-study-section:last-child {
+    margin-bottom: 0;
+}
+
+.section-title-large {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-xl);
+    color: var(--color-text);
+}
+
+.section-title-medium {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-lg);
+    color: var(--color-text);
+}
+
+.section-intro {
+    font-size: var(--text-xl);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-2xl);
+    line-height: 1.7;
+}
+
+.case-study-content p {
+    font-size: var(--text-lg);
+    line-height: 1.8;
+    margin-bottom: var(--space-lg);
+}
+
+.case-study-content blockquote {
+    background-color: var(--color-gray-50);
+    border-left: 4px solid var(--color-primary);
+    padding: var(--space-xl);
+    margin: var(--space-2xl) 0;
+    font-size: var(--text-xl);
+    font-style: italic;
+    color: var(--color-text);
+}
+
+.case-study-content blockquote cite {
+    display: block;
+    margin-top: var(--space-md);
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    font-style: normal;
+}
+
+.highlight-box {
+    background: linear-gradient(135deg, var(--color-cream), var(--color-gray-50));
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    margin: var(--space-3xl) 0;
+}
+
+.highlight-box-title {
+    font-size: var(--text-2xl);
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+}
+
+.highlight-box-content {
+    font-size: var(--text-lg);
+    line-height: 1.7;
+}
+
+/* Image Gallery */
+.case-study-image {
+    width: 100%;
+    margin: var(--space-3xl) 0;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.case-study-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-caption {
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-top: var(--space-md);
+    font-style: italic;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: var(--space-2xl);
+    right: var(--space-2xl);
+    width: 48px;
+    height: 48px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    box-shadow: var(--shadow-xl);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+    z-index: 999;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--color-burgundy);
+    transform: translateY(-4px);
+}
+
+.back-to-top svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* ==========================================================================
+   Responsive - Inner Pages
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .page-hero {
+        padding: calc(var(--space-3xl) + 73px) 0 var(--space-2xl);
+    }
+    
+    .about-content,
+    .contact-content,
+    .case-study-content {
+        padding: var(--space-3xl) 0;
+    }
+    
+    .contact-form-wrapper {
+        padding: var(--space-xl);
+    }
+    
+    .about-cta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .case-study-meta {
+        gap: var(--space-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-highlight {
+        padding: var(--space-xl);
+    }
+    
+    .back-to-top {
+        bottom: var(--space-lg);
+        right: var(--space-lg);
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
